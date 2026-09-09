@@ -6,11 +6,15 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import Products from './components/Products'
+import { useState } from "react"
 
 const App = () => {
+
+  const [cart, setCart] = useState(0)
+
   return (
     <div className="app">
-      <Header />
+      <Header  produtosCarrinho={cart}/>
       <HeroSection 
         titulo ="Ofertas imperdíveis para você"
         subtitulo = "Até 30% de desconto em produtos selecionados. Aproveite!"
@@ -18,7 +22,7 @@ const App = () => {
         imagemHero = {hero}
       />
       <Categories />
-      <Products />
+      <Products setCart = {setCart}/>
       <Benefits />
       <Footer />
     </div>

@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 
-const Header = () => {
+const Header = ({produtosCarrinho}) => {
     return (
         <header className="header">
             <div className="logo">🛍️ ReactShop</div>
@@ -16,7 +16,7 @@ const Header = () => {
                 <span className="icon-button">❤️</span>
                 <span className="icon-button cart">
                     🛒
-                    <span className="badge">3</span>
+                    <span className="badge">{produtosCarrinho}</span>
                 </span>
             </div>
         </header>
