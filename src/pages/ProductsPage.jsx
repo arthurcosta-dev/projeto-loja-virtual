@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import { Link } from "react-router";
+import ProductList from "../components/ProductList";
+
+
 
 const ProductsPage = () => {
 
@@ -31,32 +33,7 @@ const ProductsPage = () => {
             <h1>Todos os produtos</h1>
             <button onClick={() => setCategory("electronics")}>Eletronicos</button>
             <button onClick={() => setCategory("jewelery")}>Joias</button>
-            <div className="product-list">
-                {products.map((product) => (
-                    <div className="product-card" key={product.id}>
-                        <img
-                            src={product.image}
-                            alt={product.title}
-                        />
-                        <p className="product-category">
-                            {product.category}
-                        </p>
-                        <h3>{product.title}</h3>
-                        <p className="product-rating">
-                            ⭐⭐⭐⭐⭐ ({product.rating.rate})
-                        </p>
-                        <p className="product-price">
-                            R$ {product.price}
-                        </p>
-                        <Link to={`/produtos/${product.id}`}>
-                            Ver mais
-                        </Link>
-                        <button className="btn-secondary">
-                            Adicionar ao carrinho
-                        </button>
-                    </div>
-                ))}
-            </div>
+            <ProductList products = {products}/>
         </>
         
 
